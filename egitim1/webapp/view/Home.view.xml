@@ -1,0 +1,69 @@
+<mvc:View controllerName="renova.egitim1.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        	<Table id="idProductsTable"
+                inset="false"
+                items="{EmployeeModel>/}">
+                <headerToolbar>
+                    <OverflowToolbar>
+                        <content>
+                            <Title text="Products" level="H2"/>
+                            <ToolbarSpacer />
+                            <SearchField search="onSearchEmployee" width="auto"></SearchField>
+                            <Button text="{i18n>addEmployee}" press="onAddEmployee" icon="sap-icon://add"/>
+                        </content>
+                    </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column
+                        width="12em">
+                        <Text text="{i18n>id}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Tablet"
+                        demandPopin="true">
+                        <Text text="{i18n>name}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="End">
+                        <Text text="{i18n>surname}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="End">
+                        <Text text="{i18n>empTitle}" />
+                    </Column>
+                    <Column
+                        minScreenWidth="Desktop"
+                        demandPopin="true"
+                        hAlign="End">
+                        <Text />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem vAlign="Middle">
+                        <cells>
+                            <ObjectIdentifier
+                                title="{EmployeeModel>id}"/>
+                            <Text
+                                text="{EmployeeModel>name}" />
+                            <Text
+                                text="{EmployeeModel>surname}" />
+                            <Text
+                                text="{path:'EmployeeModel>title', formatter: '.formatter.getTitleText'}" />
+                            <VBox>
+                                <Button icon="sap-icon://edit" press="onEditEmployee"/>
+                                <Button icon="sap-icon://delete" press="onDeleteEmployee"/>
+                            </VBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>
