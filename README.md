@@ -1,2 +1,2 @@
 # rnvegitim1
-Renova Eğitim Fiori App 2
+Renova Eğitim Fiori App 1
